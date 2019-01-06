@@ -1,4 +1,7 @@
+```
+sudo apt install make 
 
+```
 
 
 ```
