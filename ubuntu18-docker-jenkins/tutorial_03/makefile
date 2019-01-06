@@ -20,8 +20,6 @@ clean-data:  clean
 	-docker volume rm jenkins-log	
 clean-network: clean
 	-docker network rm jenkins-net	
-clean-images:
-	@docker rmi `docker images -q -f "dangling=true"`
 
 old-clean:
 	@docker stop jenkins-master

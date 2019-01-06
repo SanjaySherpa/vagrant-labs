@@ -6,8 +6,7 @@ stop:
 	@docker-compose -p jenkins down
 clean-data: 
 	@docker-compose -p jenkins down -v
-clean-images:
-	@docker rmi `docker images -q -f "dangling=true"`
+
 
 old-clean:
 	@docker stop jenkins-master
@@ -17,4 +16,3 @@ old-clean:
 	@docker volume rm jenkins-data
 	@docker volume rm jenkins-log
 	@docker network rm jenkins-net
-	@docker rmi `docker images -q -f "dangling=true"`

@@ -12,3 +12,8 @@ make old-clean
 make build run
 
 ```
+
+```
+docker exec jenkins_master_1 cat /var/log/jenkins/jenkins.log
+
+```
