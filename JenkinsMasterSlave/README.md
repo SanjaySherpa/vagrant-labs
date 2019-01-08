@@ -31,7 +31,7 @@ ssh-keygen
 * Log in as root
 * Edit ssh config: 
 ```
-sudo nano /etc/ssh/sshd_config
+nano /etc/ssh/sshd_config
 ```
 Change this line:
 PasswordAuthentication no
@@ -39,7 +39,7 @@ to
 PasswordAuthentication yes
 Restart daemon:
 ``` 
-sudo systemctl restart sshd
+systemctl restart sshd
 ```
 
 # Setup Credentials on Jenkins
@@ -81,7 +81,7 @@ passwd jenkins
 * Log in as root
 * Edit ssh config: 
 ```
-sudo nano /etc/ssh/sshd_config
+nano /etc/ssh/sshd_config
 ```
 Change this line:
 PasswordAuthentication no
@@ -89,12 +89,14 @@ to
 PasswordAuthentication yes
 Restart daemon:
 ``` 
-sudo systemctl restart sshd
+systemctl restart sshd
 ```
 
 # Copy the SSH Key from Master to Slave
 * Next, we need to upload the key 'id_rsa.pub' from the master to slave server nodes. We need to upload to each server nodes using 'ssh-copy-id' command as below.
 ```
+su - jenkins
+
 ssh-copy-id jenkins@172.42.42.102
 ```
 Type the jenkins user password.
